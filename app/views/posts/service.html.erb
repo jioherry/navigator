@@ -1,0 +1,61 @@
+<header>
+	<div class="container clearfix">
+		<div id="logo">
+					<%= link_to posts_path do %>
+						 <%= image_tag("logo_web.png", :width => 60) %>
+					<% end %>
+		</div>
+			<nav>
+				<ul class="service-a clearfix">
+						<li><%= link_to '服務內容', service_posts_path %></li>
+						<li><%= link_to '合作案例', work_case_posts_path(@posts) %></li>
+						<li><%= link_to '顧問', consultant_posts_path %></li>
+						<li><%= link_to '東南亞商情', articles_path(@articles) %></li>
+						<li><%= link_to '關於我們', aboutus_posts_path %></li>
+				</ul>
+			</nav>
+
+	</div>
+
+</header>
+
+<div class="service-p animated infinite fadeInRight">
+  <p>服務提供</p>
+  <div class="service-title-1"><p>service</p></div>
+  <div class="service-ul">
+    <ul >
+      <h4>商業諮詢</h4>
+      <li>東協當地顧問、專屬產業前期研究、個別化的商業諮詢</li>
+      <h4>線上溝通平台</h4>
+      <li>提供專線溝通、即時與顧問諮詢問題</li>
+      <h4>當地夥伴媒合</h4>
+      <li>根據產業狀況，提供當地合作夥伴清單</li>
+      <h4>東南亞商情</h4>
+      <li>定期提供最新商情、顧問專欄文章</li>
+    </ul>
+  </div>
+  <div class="service-more animated infinite fadeInDown">
+    <%= link_to '>>>瞭解更多', work_case_posts_path %>
+  </div>
+  <!-- <div class="handshake">
+      <a><%= image_tag ("handshake.png")%>
+
+  </div> -->
+
+</div>
+  <div class="service-orange animated infinite fadeInRight">
+    <p>法律｜文化｜產業</p>
+  </div>
+  <div class="service-content animated infinite fadeInRight">
+    <h5>欲前往進軍國家之產業，相關法律諮詢</h5>
+    <h5>當地地氣民情，文化適應，特別注意之文化習俗禁忌，飲食習慣</h5>
+    <h5>國家政策產業，市場進入時機</h5>
+  </div>
+
+
+
+
+
+<div class="aboutus-bg">
+  <%= image_tag ("service.jpg")%>
+</div>

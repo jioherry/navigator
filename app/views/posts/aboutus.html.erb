@@ -1,0 +1,54 @@
+<header>
+	<div class="container clearfix">
+		<div id="logo">
+					<%= link_to posts_path do %>
+						 <%= image_tag("logo_web.png", :width => 50) %>
+					<% end %>
+		</div>
+			<nav>
+				<ul class="clearfix">
+						<li><%= link_to '服務內容', service_posts_path %></li>
+						<li><%= link_to '合作案例', work_case_posts_path(@posts) %></li>
+						<li><%= link_to '顧問', consultant_posts_path %></li>
+						<li><%= link_to '東南亞商情', articles_path(@articles) %></li>
+						<li><%= link_to '關於我們', aboutus_posts_path %></li>
+				</ul>
+			</nav>
+				<div class="login">
+					<!-- <a href="#" id="signup-link" > -->
+						<% if current_user %>
+							<%= link_to('登出', destroy_user_session_path, :method => :delete) %>
+							<%= link_to('修改密碼', edit_registration_path(:user)) %>
+						<% else %>
+							<%= link_to('註冊', new_registration_path(:user)) %>
+							<%= link_to('登入', new_session_path(:user)) %>
+						<% end %>
+					<!-- </a> -->
+				</div>
+
+	</div>
+
+</header>
+<div class="triangle animated infinite flipInX">
+
+    <%= image_tag ("triangle.jpg")%>
+
+</div>
+<div class="triangle-content animated infinite fadeInDown">
+    <p>新南向領航員</p>
+    <h5>為國際知名翻譯公司-WritePath-的合作夥伴</h5>
+    <h5>為您提供東南亞各產業顧問群、前期市場調查及當地合作夥伴</h5>
+    <h5>讓您在有限的時間及資源下，快速確認前進東南亞的方向</h5>
+    <h5>聯絡我們 service@navigator.com</h5>
+</div>
+
+<div class="app-store-logo animated infinite flipInX">
+
+    <%= image_tag ("app-store-logo.png")%>
+
+</div>
+
+
+<div class="aboutus-bg">
+  <%= image_tag ("aboutus.jpg")%>
+</div>

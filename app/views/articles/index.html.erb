@@ -1,0 +1,52 @@
+<header>
+	<div class="container clearfix">
+		<div id="logo">
+					<%= link_to posts_path do %>
+						 <%= image_tag("logo_web.png", :width => 60) %>
+					<% end %>
+		</div>
+			<nav>
+				<ul class="clearfix">
+						<li><%= link_to '服務內容', service_posts_path %></li>
+						<li><%= link_to '合作案例', work_case_posts_path(@posts) %></li>
+						<li><%= link_to '顧問', consultant_posts_path %></li>
+						<li><%= link_to '東南亞商情', articles_path(@articles) %></li>
+						<li><%= link_to '關於我們', aboutus_posts_path %></li>
+				</ul>
+			</nav>
+				<div class="login">
+					<!-- <a href="#" id="signup-link" > -->
+						<% if current_user %>
+							<%= link_to('登出', destroy_user_session_path, :method => :delete) %>
+							<%= link_to('修改密碼', edit_registration_path(:user)) %>
+						<% else %>
+							<%= link_to('註冊', new_registration_path(:user)) %>
+							<%= link_to('登入', new_session_path(:user)) %>
+						<% end %>
+					<!-- </a> -->
+				</div>
+
+	</div>
+
+</header>
+
+
+
+<ul class="table">
+  <h1>東南亞商情</h1>
+  <% @articles.each do |article| %>
+      <div class="article-index animated infinite fadeInDown">
+        <li><%= link_to article_path(article) do %>
+              <%= image_tag(article.photo) %>
+
+                <%= article.title %></li>
+            
+
+            <% end %>
+      </div>
+      <%end%>
+</ul>
+
+<div class="aboutus-bg">
+  <%= image_tag ("article-bg.jpg")%>
+</div>

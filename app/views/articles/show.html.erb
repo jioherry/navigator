@@ -1,0 +1,92 @@
+<header>
+
+	<div class="container clearfix">
+		<div id="logo">
+					<%= link_to posts_path do %>
+						 <%= image_tag("logo_web.png", :width => 60) %>
+					<% end %>
+		</div>
+			<nav>
+				<ul class="clearfix">
+						<li><%= link_to '服務內容', service_posts_path %></li>
+						<li><%= link_to '合作案例', work_case_posts_path(@posts) %></li>
+						<li><%= link_to '顧問', consultant_posts_path %></li>
+						<li><%= link_to '東南亞商情', articles_path(@articles) %></li>
+						<li><%= link_to '關於我們', aboutus_posts_path %></li>
+				</ul>
+			</nav>
+
+
+	</div>
+
+</header>
+
+
+<div class="article-title">
+	<h1>東南亞商情</h1>
+	<h3><%= @article.title %></h3>
+
+	<ul>
+			<li><%= @article.content %></li><br>
+			<li><%= image_tag ("article-img-01.png")%></li><br>
+			<li><%= image_tag ("article-img-02.png")%></li>
+			<li>“幾乎40.0％的受訪者表示，他們的家庭在這個未來的農曆新年裡預留了不到5,000泰銖。”
+				其次是5,001 - 10,000泰銖（34.4％），最後為10,001 - 20,000泰銖。
+				受訪者分配了預算的50.0％用於食品（為了儀式和慶祝目的），20.0％的紅包和10.0％的金紙紅包</li>
+			<li><div class="article-img-03"><%= image_tag ("article-img-03.png")%></div></li>
+			<li>“超過50％的受訪者表示計劃今年增加農曆新年預算。”
+					28.0％的受訪者表示決定維持預算，而20.0％的受訪者表示將會在即將到來的節日中減少預算。
+  				當被問及影響其決定增加，減少或維持預算的因素時，選擇增加預算的受訪者中，高達73.0％的人士表示，他們決定對消費品價格上漲或通貨膨脹率上漲，其次是增加工資（6.4％），那麼增加生活費，家庭成員和增加禮儀用品需求的要求（5.6％）。</li>
+			<li><%= image_tag ("article-img-04.png")%></li>
+			<li>有42.3％的被調查人員決定維持預算，他們計劃像去年一樣慶祝農曆新年，21.7％的受訪者表示，他們的決定是由於經濟不景氣而11.1％表示計劃節省成本。</li>
+	</ul>
+<br>
+
+<h2>評論</h2>
+
+<ul>
+	<% @responses.each do |response| %>
+		<% if response.user.present? %>
+			<%= current_user.email %></br>
+		<% end %>
+		<%= response.body %>
+	<% end %>
+</ul>
+
+	<%= form_for @response, :url => article_responses_path(
+		:article_id => @article, :id => @response.id), :method => :post do |f| %>
+		<%= f.label :body, "請寫下您的評論" %><br>
+
+			<%= f.text_field :body %>
+
+
+		<%= f.submit "回覆" %>
+	<% end %>
+
+</div>
+
+
+<div class="article-writer animated infinite fadeInRight">
+
+
+
+		<h3>About Writer</h3>
+		<%= image_tag ("hothihonglien.png")%>
+		<h4>MS Ho Thi Hong Lien</h4>
+		<h5>經歷Experience</h5>
+		<ul>
+				<li>Limkokwing大學國際貿易研究，從事越南及東南亞市場研究</li>
+				<li>Sinh Tai貿易公司國貿助理</li>
+				<li>Jonny Walker酒商代理商策展員</li>
+				<li>Wide-Link Group科技項目撰文</li>
+				<li>The World’s Music業務助理</li>
+		</ul>
+		<br>
+		<%= link_to '>>>聯絡我', aboutus_posts_path %>
+</div>
+
+</div>
+
+<div class="articleshow-bg">
+  <%= image_tag ("articleshow.jpg")%>
+</div>

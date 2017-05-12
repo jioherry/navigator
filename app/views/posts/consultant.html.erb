@@ -1,0 +1,114 @@
+<header>
+	<div class="container clearfix">
+		<div id="logo">
+					<%= link_to posts_path do %>
+						 <%= image_tag("logo_web.png", :width => 50) %>
+					<% end %>
+		</div>
+			<nav>
+				<ul class="clearfix">
+						<li><%= link_to '服務內容', service_posts_path %></li>
+						<li><%= link_to '合作案例', work_case_posts_path(@posts) %></li>
+						<li><%= link_to '顧問', consultant_posts_path %></li>
+						<li><%= link_to '東南亞商情', articles_path(@articles) %></li>
+						<li><%= link_to '關於我們', aboutus_posts_path %></li>
+				</ul>
+			</nav>
+				<div class="login">
+					<!-- <a href="#" id="signup-link" > -->
+						<% if current_user %>
+							<%= link_to('登出', destroy_user_session_path, :method => :delete) %>
+							<%= link_to('修改密碼', edit_registration_path(:user)) %>
+						<% else %>
+							<%= link_to('註冊', new_registration_path(:user)) %>
+							<%= link_to('登入', new_session_path(:user)) %>
+						<% end %>
+					<!-- </a> -->
+				</div>
+
+	</div>
+
+</header>
+<div class="consult-p animated infinite fadeInRight">
+<p>顧問諮詢</p>
+</div>
+<div class="consult-title-1 animated infinite fadeInLeft"><p>Consultants</p></div>
+
+<div class="consult">
+
+
+  <div class="consult-col-4 animated infinite flipInX">
+      <%= image_tag ("aung.png")%>
+      <h4>Dr. Aung Kyaw Myint</h4>
+      <h5>經歷Experience</h5>
+      <ul>
+          <li>- 4年醫藥業務經歷</li>
+          <li>- 新聞產業顧問</li>
+          <li>- 2年美國猶太人聯合分配委員會專案經理</li>
+          <li>- 5年緬甸話同步翻譯經驗</li>
+      </ul>
+
+  </div>
+
+
+  <div class="consult-col-4 animated infinite flipInX">
+    <%= image_tag ("phirun-nop.png")%>
+    <h4>Mr PHIRUN NOP</h4>
+    <h5>經歷Experience</h5>
+    <ul>
+        <li>-資訊及金融背景</li>
+        <li>-目前擔任緬甸國家銀行商業分析師，負責金融及大數據分析。</li>
+        <li>-具有ACCA會計師認證</li>
+        <li>-曾於法國SKEMA商學院攻讀企業管理學位」</li>
+    </ul>
+
+  </div>
+
+
+  <div class="consult-col-4 animated infinite flipInX">
+    <%= image_tag ("siewkooikam.png")%>
+    <h4>Mr Siew Kooi Kam</h4>
+    <h5>經歷Experience</h5>
+    <ul>
+        <li>-機械及土木工程專長</li>
+        <li>-曾任職日本清水建設工程設計部主管</li>
+        <li>-也擔任過日本富士玻纖計畫主要顧問</li>
+        <li>-具有多國外派經驗，包括杜拜、日本、台灣及新加坡￼」</li>
+    </ul>
+  </div>
+
+  <div class="consult-col-4 animated infinite flipInX">
+    <%= image_tag ("hothihonglien.png")%>
+    <h4>MS Ho Thi Hong Lien</h4>
+    <h5>經歷Experience</h5>
+    <ul>
+        <li>-Limkokwing大學國際貿易研究，從事越南及東南亞市場研究</li>
+        <li>-Sinh Tai貿易公司國貿助理</li>
+        <li>-Jonny Walker酒商代理商策展員</li>
+        <li>-Wide-Link Group科技項目撰文</li>
+				<li>-The World’s Music業務助理</li>
+    </ul>
+  </div>
+
+  <div class="consult-col-4 animated infinite flipInX">
+    <%= image_tag ("melon.png")%>
+    <h4>Ms. Melon</h4>
+    <h5>經歷Experience</h5>
+    <ul>
+        <li>-企業管理背景</li>
+        <li>-曾於台灣政治大學留學一年</li>
+        <li>-目前於BBF Peepia擔任業務開發主管</li>
+        <li>-2年行銷總監經歷於Anantara Vacation Club</li>
+    </ul>
+  </div>
+
+	<div class="consult-more animated infinite flipInX">
+		<%= link_to '>>>瞭解更多', articles_path %>
+	</div>
+
+</div>
+
+
+<div class="aboutus-bg">
+  <%= image_tag ("consult.jpg")%>
+</div>
